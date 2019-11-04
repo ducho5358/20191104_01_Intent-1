@@ -2,6 +2,7 @@ package com.tjoeun.a20191104_01_intent
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -33,6 +34,14 @@ class MainActivity : AppCompatActivity() {
             startActivityForResult(intent, REQ_CODE_FOR_NAME)
 
         }
+
+
+        phoneDialBtn.setOnClickListener {
+            var uri = Uri.parse("tel:01048765358") // 띄어쓰기 하면 안됨.
+            var intent = Intent(Intent.ACTION_DIAL, uri)
+            startActivity(intent)
+        }
+
 
     }
 
